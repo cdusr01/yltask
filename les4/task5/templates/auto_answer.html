@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <meta charset="UTF-8">
+    <table width="600">
+         <tr>
+            <th style="width:70%">Фамилия:</th>
+            <th>{{ surname }}</th>
+         </tr>
+        <tr>
+            <th>Имя:</th>
+            <th>{{ name }}</th>
+         </tr>
+        <tr>
+            <th>Образование:</th>
+            <th>{{ education }}</th>
+         </tr>
+        <tr>
+            <th>Профессия:</th>
+            <th>{{ profession }}</th>
+         </tr>
+        <tr>
+            <th>Пол:</th>
+            <th>{{ sex }}</th>
+         </tr>
+        <tr>
+            <th>Мотивация:</th>
+            <th>{{ motivation }}</th>
+         </tr>
+        <tr>
+            <th>Готовы остаться на Марсе?</th>
+            <th>{{ ready }}</th>
+         </tr>
+    </table>
+
+{% endblock %}
