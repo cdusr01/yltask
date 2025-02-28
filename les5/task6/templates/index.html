@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Записи в блоге</h1>
+{% for item in jobs%}
+<div class="table_container">
+    <h2>Action # {{item.id}}</h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+        <tr class="table-dark">
+            <th scope="col" width="40%" align="center">Title of activity            </td>
+            <th scope="col" width="15%" align="center">Team leader            </td>
+            <th scope="col" width="15%" align="center">Duration            </td>
+            <th scope="col" width="15%" align="center">List of collaborators            </td>
+            <th scope="col" width="15%" align="center">Is finished            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td > {{ item.job }}</td>
+            <td class="table-primary"> {{ item.user.name }} {{item.user.surname}}</td>
+            <td class="table-primary"> {{ item.work_size }}</td>
+            <td class="table-primary"> {{ item.collaborators }}</td>
+            {% if item.is_finished %}
+            <td class="table-success" align="center">Finished</td>
+            {% else %}
+            <td class="table-warning" align="center">Is not finished</td>
+            {% endif %}
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endfor %}
+{% endblock %}
